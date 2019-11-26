@@ -45,7 +45,8 @@ public class Numeros {
     }
     }while(num2!=num && intentos>0);
     if(salto==0){
-    JOptionPane.showMessageDialog(null, "Perdiste");    
+    JOptionPane.showMessageDialog(null, "Perdiste");
+    JOptionPane.showMessageDialog(null, "El numero era "+num);     
     }
     valor =Integer.parseInt(JOptionPane.showInputDialog("Si quieres parar de jugar pulsa 0"));
 }while(valor!=0); 
