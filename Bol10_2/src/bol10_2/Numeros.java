@@ -22,6 +22,7 @@ public class Numeros {
     public void juego(){
     do{
     num =(int) (Math.random() * (51 - 0));
+    int intentos = Integer.parseInt(JOptionPane.showInputDialog("Numero intentos?"));   
     do{
     do{
     num2 = Integer.parseInt(JOptionPane.showInputDialog("Adivina el numero entre 1 e 50"));
@@ -32,10 +33,15 @@ public class Numeros {
     JOptionPane.showMessageDialog(null, "Preto");
     else if (Math.abs(num-num2)<20 && (num-num2)!=0)
     JOptionPane.showMessageDialog(null, "Lonxe");
-    else if (Math.abs(num-num2)>20 && (num-num2)!=0)
-    JOptionPane.showMessageDialog(null, "Moi lonxe");   
-    }while(num2!=num);
-    JOptionPane.showMessageDialog(null, "Acertaste"); 
+    else if (Math.abs(num-num2)>20 && (num-num2)!=0){
+    JOptionPane.showMessageDialog(null, "Moi lonxe");
+    }
+    else if(num==num2){
+    JOptionPane.showMessageDialog(null, "Acertaste");
+    break;          
+    }
+    intentos--;
+    }while(num2!=num || intentos!=0);
     valor =Integer.parseInt(JOptionPane.showInputDialog("Si quieres parar de jugar pulsa 0"));
 }while(valor!=0); 
 }
