@@ -1,0 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package bol10_2;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author usuario
+ */
+public class Numeros {
+    private int num;
+    private int num2;
+    int valor;
+    public Numeros(){
+    
+}
+    
+    public void juego(){
+    do{
+    num =(int) (Math.random() * (51 - 0));
+    do{
+    do{
+    num2 = Integer.parseInt(JOptionPane.showInputDialog("Adivina el numero entre 1 e 50"));
+    }while(num>50||num<1);
+    if (Math.abs(num-num2)<5 && (num-num2)!=0 )
+    JOptionPane.showMessageDialog(null, "Moi preto");
+    else if (Math.abs(num-num2)<10 && (num-num2)!=0)
+    JOptionPane.showMessageDialog(null, "Preto");
+    else if (Math.abs(num-num2)<20 && (num-num2)!=0)
+    JOptionPane.showMessageDialog(null, "Lonxe");
+    else if (Math.abs(num-num2)>20 && (num-num2)!=0)
+    JOptionPane.showMessageDialog(null, "Moi lonxe");   
+    }while(num2!=num);
+    JOptionPane.showMessageDialog(null, "Acertaste"); 
+    valor =Integer.parseInt(JOptionPane.showInputDialog("Si quieres parar de jugar pulsa 0"));
+}while(valor!=0); 
+}
+}    
